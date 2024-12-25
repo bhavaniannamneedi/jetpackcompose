@@ -23,7 +23,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SaveInRoomDB"></activity>
+        <activity android:name=".SaveInRoomDB"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"></activity>
 
     </application>
 

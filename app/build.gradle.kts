@@ -66,11 +66,10 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.lifecycle.runtime.compose.android)
+    implementation(libs.accompanist.systemuicontroller )
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
@@ -81,6 +80,14 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     ksp(libs.dagger.compiler)
+    implementation(libs.androidx.ui.test.junit4.android)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+// Espresso dependencies
+    androidTestImplementation(libs.test.espresso.core)
+    androidTestImplementation(libs.test.espresso.contrib)
+    androidTestImplementation(libs.test.espresso.intents)
+    androidTestImplementation(libs.test.espresso.accessibility)
+    androidTestImplementation(libs.test.idling.concurrent)
 
 
    // implementation(libs.androidx.hilt.lifecycle.viewmodel)
