@@ -49,6 +49,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
@@ -251,7 +252,7 @@ fun SearchView(state: MutableState<TextFieldValue>) {
         onValueChange = { value ->
             state.value = value
         },
-        modifier = Modifier
+        modifier = Modifier.testTag("search view")
             .fillMaxWidth().padding(vertical = 20.dp).padding(top = 16.dp),
         textStyle = TextStyle(color = Color.Black, fontSize = 18.sp),
         leadingIcon = {

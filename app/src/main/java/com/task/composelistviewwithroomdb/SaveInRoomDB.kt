@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.Observer
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.task.composelistviewwithroomdb.presentation.HomeScreen
@@ -54,6 +55,11 @@ class SaveInRoomDB : ComponentActivity() {
                     }
 
                     HomeScreen()
+                    viewModel!!.shouldExitApp.observe(this, Observer { shouldExit ->
+                        if (shouldExit) {
+                            exitApp()  // Call exit app logic here
+                        }
+                    })
 
                     viewModel!!.resetInactivityTimer();
                 }
@@ -61,6 +67,9 @@ class SaveInRoomDB : ComponentActivity() {
         }
     }
 
+    private fun exitApp() {
+        finish()
+    }
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         super.onTouchEvent(event)
 
